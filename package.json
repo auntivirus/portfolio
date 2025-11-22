@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:host\" \"npm run dev:main\" \"npm run dev:minimal\"",
+    "dev:host": "npm run dev --workspace=apps/host",
+    "dev:main": "npm run build --workspace=apps/main && npm run preview --workspace=apps/main",
+    "dev:minimal": "npm run build --workspace=apps/minimal && npm run preview --workspace=apps/minimal",
+    "build": "npm run build --workspaces",
+    "preview": "npm run preview --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

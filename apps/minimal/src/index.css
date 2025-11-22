@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Mode (Primary) */
+  --bg-color: #fafafa;
+  --surface: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-secondary: #4a4a4a;
+  --accent: #ff4500; /* International Orange */
+  --border: #e0e0e0;
+  --grid-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg-color: #0a0a0a;
+  --surface: #1a1a1a;
+  --text-primary: #fafafa;
+  --text-secondary: #a0a0a0;
+  --accent: #00d4ff; /* Electric Blue */
+  --border: #2a2a2a;
+  --grid-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Grid System */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Brutalist Card */
+.brutal-card {
+  background: var(--surface);
+  border: 2px solid var(--text-primary);
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.brutal-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Accent Elements */
+.accent-bar {
+  height: 4px;
+  background: var(--accent);
+  width: 60px;
+  margin: 1rem 0;
+}
+
+.accent-text {
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-brutal {
+  background: var(--accent);
+  color: var(--bg-color);
+  border: 2px solid var(--text-primary);
+  padding: 1rem 2rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 var(--text-primary);
+}
+
+/* Grid Lines (Decorative) */
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Section Dividers */
+.section-divider {
+  height: 2px;
+  background: var(--border);
+  margin: 4rem 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}

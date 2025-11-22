@@ -1,0 +1,15 @@
+{
+  "name": "@portfolio/data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'No build needed'"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1"
+  },
+  "dependencies": {
+    "react-icons": "^5.5.0"
+  }
+}
