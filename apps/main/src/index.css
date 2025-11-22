@@ -126,3 +126,23 @@ body {
     radial-gradient(circle at 85% 30%, rgba(255, 0, 128, 0.15), transparent 25%);
   pointer-events: none;
 }
+
+.header-container {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 1200px);   /* perfectly centered */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-container.scrolled {
+  top: 1rem;
+  width: min(94%, 1200px);
+  border: 1px solid var(--glass-border);
+}

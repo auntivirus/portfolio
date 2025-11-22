@@ -1,51 +1,71 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { resumeData } from '@portfolio/data';
+import React from "react";
+import { resumeData } from "@portfolio/data";
 
 const Skills = () => {
-  const skillCategories = Object.entries(resumeData.skills);
+  // Flatten all skills into a single list
+  const allSkills = [
+    ...resumeData.skills.languages,
+    ...resumeData.skills.backend,
+    ...resumeData.skills.frontend,
+    ...resumeData.skills.database,
+    ...resumeData.skills.devops,
+    ...resumeData.skills.tools,
+  ];
 
   return (
-    <section id="skills">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+    <section id="skills" style={{ padding: "6rem 4rem" }}>
+      <h6
+        style={{
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          color: "var(--text-secondary)",
+          marginBottom: "3rem",
+          fontSize: "0.8rem",
+          fontFamily: "Space Mono, monospace",
+        }}
       >
-        <h6 style={{ 
-          textTransform: 'uppercase', 
-          letterSpacing: '0.1em', 
-          color: 'var(--text-secondary)', 
-          marginBottom: '3rem',
-          fontSize: '0.8rem'
-        }}>
-          03. Skills
-        </h6>
+        03. SKILLS
+      </h6>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
-          {skillCategories.map(([category, skills], index) => (
-            <div key={index}>
-              <h4 style={{ 
-                textTransform: 'capitalize', 
-                marginBottom: '1rem', 
-                fontSize: '1rem',
-                borderBottom: '1px solid var(--border)',
-                paddingBottom: '0.5rem'
-              }}>
-                {category.replace(/([A-Z])/g, ' $1').trim()}
-              </h4>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                {skills.map((skill, i) => (
-                  <li key={i} style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+      {/* Single column list - ultra minimal */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+          gap: "0",
+          borderTop: "2px solid var(--text-primary)",
+        }}
+      >
+        {allSkills.map((skill, index) => (
+          <div
+            key={index}
+            style={{
+              padding: "1rem 1.5rem",
+              borderRight: "1px solid var(--border)",
+              borderBottom: "1px solid var(--border)",
+              fontFamily: "Space Mono, monospace",
+              fontSize: "0.9rem",
+              color: "var(--text-primary)",
+              transition: "all 0.2s ease",
+              cursor: "default",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = "var(--accent)";
+              e.target.style.color = "var(--bg-color)";
+              e.target.style.transform = "translate(-2px, -2px)";
+              e.target.style.boxShadow = "2px 2px 0 var(--text-primary)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = "transparent";
+              e.target.style.color = "var(--text-primary)";
+              e.target.style.transform = "translate(0, 0)";
+              e.target.style.boxShadow = "none";
+            }}
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

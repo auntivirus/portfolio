@@ -75,6 +75,21 @@ export const resumeData = {
         "Engineered a secure, multi-role authentication system enabling seamless parent-player account switching.",
         "Developed a real-time live score streaming module and post-match analytics engine, driving user engagement.",
       ],
+      links: [
+        { name: "Website", url: "https://playmotech.com/" },
+        {
+          name: "Case Study",
+          url: "https://openspaceservices.com/casestudy/playmo",
+        },
+        {
+          name: "Play Store",
+          url: "https://play.google.com/store/apps/details?id=com.playmotech.letsrally",
+        },
+        {
+          name: "App Store",
+          url: "https://apps.apple.com/au/app/athletiq-own-your-game/id6740634277",
+        },
+      ],
     },
     {
       name: "Ansell AMAT",
@@ -90,6 +105,16 @@ export const resumeData = {
       details: [
         "Spearheaded the full-stack development of a mission-critical enterprise application using React and Spring Boot.",
         "Leveraged Spring Cloud and Docker to create a modular, containerized environment, simplifying deployment and scaling.",
+      ],
+      links: [
+        {
+          name: "Play Store",
+          url: "https://play.google.com/store/apps/details?id=com.nnpc",
+        },
+        {
+          name: "Case Study",
+          url: "https://www.openspaceservices.com/casestudy/nnpc",
+        },
       ],
     },
     {

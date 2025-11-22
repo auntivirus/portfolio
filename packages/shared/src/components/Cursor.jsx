@@ -89,7 +89,7 @@ const Cursor = ({ variant = 'minimal' }) => {
         width: '32px',
         height: '32px',
         borderRadius: '50%',
-        border: '2px solid var(--text-primary)',
+        border: '2px solid #ffffff',
         pointerEvents: 'none',
         zIndex: 9999,
         mixBlendMode: 'difference'
@@ -101,7 +101,7 @@ const Cursor = ({ variant = 'minimal' }) => {
       <div style={{
         width: '8px',
         height: '8px',
-        backgroundColor: 'var(--text-primary)',
+        backgroundColor: '#ffffff',
         borderRadius: '50%',
         position: 'absolute',
         top: '50%',
