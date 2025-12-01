@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   /* Light Mode (Primary) */
@@ -11,7 +11,7 @@
   --grid-color: rgba(0, 0, 0, 0.08);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #0a0a0a;
   --surface: #1a1a1a;
   --text-primary: #fafafa;
@@ -28,7 +28,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -60,8 +60,13 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Mono', monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Mono", monospace;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -89,7 +94,7 @@ h3 {
 
 .accent-text {
   color: var(--accent);
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-weight: 700;
 }
 
@@ -99,7 +104,7 @@ h3 {
   color: var(--bg-color);
   border: 2px solid var(--text-primary);
   padding: 1rem 2rem;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
@@ -122,8 +127,7 @@ h3 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: 
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: -1;
@@ -140,11 +144,21 @@ h3 {
   }
 }
 
+/* Section Spacing */
+section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Section Dividers */
 .section-divider {
   height: 2px;
   background: var(--border);
-  margin: 4rem 0;
+  margin: 0;
 }
 
 /* Scrollbar */

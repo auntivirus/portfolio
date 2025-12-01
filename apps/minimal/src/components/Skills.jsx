@@ -13,7 +13,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" style={{ padding: "6rem 4rem" }}>
+    <section id="skills">
       <h6
         style={{
           textTransform: "uppercase",
@@ -32,8 +32,7 @@ const Skills = () => {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-          gap: "0",
-          borderTop: "2px solid var(--text-primary)",
+          gap: "1rem",
         }}
       >
         {allSkills.map((skill, index) => (
@@ -41,8 +40,6 @@ const Skills = () => {
             key={index}
             style={{
               padding: "1rem 1.5rem",
-              borderRight: "1px solid var(--border)",
-              borderBottom: "1px solid var(--border)",
               fontFamily: "Space Mono, monospace",
               fontSize: "0.9rem",
               color: "var(--text-primary)",
