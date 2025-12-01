@@ -12,7 +12,13 @@ export default defineConfig({
       exposes: {
         "./App": "./src/App.jsx",
       },
-      shared: ["react", "react-dom", "react-router-dom", "framer-motion"],
+      shared: [
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "framer-motion",
+        "react-scroll",
+      ],
     }),
   ],
   server: {
