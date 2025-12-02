@@ -4,7 +4,10 @@ import federation from "@originjs/vite-plugin-federation";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import { createRequire } from "module";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,11 +24,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "react-scroll": path.resolve(
-        __dirname,
-        "../../node_modules/react-scroll"
-      ),
+      "react-scroll": require.resolve("react-scroll"),
     },
+  },
+  optimizeDeps: {
+    include: ["react-scroll"],
   },
   server: {
     port: 5002,
