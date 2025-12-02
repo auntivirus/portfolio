@@ -20,12 +20,7 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: {
-      "react-scroll": path.resolve(
-        __dirname,
-        "../../node_modules/react-scroll"
-      ),
-    },
+    alias: {},
   },
   server: {
     port: 5002,
