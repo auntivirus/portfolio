@@ -19,14 +19,7 @@ export default defineConfig({
       shared: ["react", "react-dom", "react-router-dom", "framer-motion"],
     }),
   ],
-  resolve: {
-    alias: {
-      "react-scroll": path.resolve(
-        __dirname,
-        "../../node_modules/react-scroll"
-      ),
-    },
-  },
+
   server: {
     port: 5002,
     strictPort: true,
